@@ -1,78 +1,82 @@
-import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import character from "@/assets/cantanhede-caracter.svg";
 
 const HeroSection = () => {
-  const socialLinks = [
-    { name: 'GitHub', icon: Github, url: 'https://github.com' },
-    { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com' },
-    { name: 'Email', icon: Mail, url: 'mailto:contato@exemplo.com' },
-  ];
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToProjects = () => {
+    const element = document.querySelector("#projects");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground">
-                Olá, eu sou{' '}
-                <span className="text-primary">Seu Nome</span>
-              </h1>
-              <p className="text-xl text-muted-foreground">
-                Desenvolvedor Full Stack apaixonado por criar experiências digitais incríveis
-              </p>
-            </div>
-
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              Especializado em React, Node.js e tecnologias modernas. 
-              Transformo ideias em soluções digitais robustas e escaláveis.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="w-full sm:w-auto">
-                <Download className="mr-2 h-4 w-4" />
-                Baixar CV
-              </Button>
-              <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                Ver Projetos
-              </Button>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg hover:bg-accent"
-                    aria-label={social.name}
-                  >
-                    <Icon size={24} />
-                  </a>
-                );
-              })}
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16"
+    >
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="space-y-8">
+          {/* Character Image */}
+          <div className="flex justify-center">
+            <div className="relative">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-main flex items-center justify-center shadow-2xl">
+                <img
+                  src={character}
+                  alt="Pedro Cantanhêde"
+                  className="w-[237px] h-[223px] object-contain"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Image */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="w-80 h-80 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <div className="w-72 h-72 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
-                  <div className="w-64 h-64 rounded-full bg-card border-2 border-border flex items-center justify-center">
-                    <span className="text-6xl">👨‍💻</span>
-                  </div>
-                </div>
-              </div>
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-secondary rounded-full animate-pulse delay-1000"></div>
-            </div>
+          {/* Name + Role */}
+          <div>
+            <h1 className="text-[63px] font-bold text-white font-poppins leading-none m-0 p-0">
+              Pedro Cantanhêde
+            </h1>
+            <h2 className="text-[26px] font-semibold text-[#FFB400] font-poppins mt-2">
+              Front-end Developer
+            </h2>
+          </div>
+
+          {/* Description */}
+          <div className="max-w-2xl mx-auto">
+            <p className="text-[#E1E1E1] text-base sm:text-lg md:text-[19px] leading-relaxed font-medium font-poppins">
+              <span className="block">With a passion for design and development,</span>
+              <span className="block">
+                I focus on building clean, responsive front-end solutions that
+                connect aesthetics with performance
+              </span>
+              <span className="block">
+                and create meaningful digital impact.
+              </span>
+            </p>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex flex-row gap-[25px] justify-center items-center">
+            <Button
+              onClick={scrollToContact}
+              variant="contact"
+              size="standard"
+            >
+              Contact me
+            </Button>
+            <Button
+              onClick={scrollToProjects}
+              variant="projects"
+              size="standard"
+              className="text-white"
+            >
+              View projects
+            </Button>
           </div>
         </div>
       </div>

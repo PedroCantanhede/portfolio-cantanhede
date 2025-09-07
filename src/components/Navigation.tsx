@@ -1,98 +1,67 @@
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import logo from "../assets/logo.svg";
+import { useState } from "react";
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [activeItem, setActiveItem] = useState("Home");
 
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Journey', href: '#journey' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+  const menuItems = [
+    { id: "Home", label: "Home" },
+    { id: "About", label: "About" },
+    { id: "Journey", label: "Journey" },
+    { id: "Testimonials", label: "Testimonials" },
+    { id: "Projects", label: "Projects" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsOpen(false);
+  const handleMenuClick = (itemId: string) => {
+    setActiveItem(itemId);
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-background/80 backdrop-blur-md border-b border-border'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <header className="bg-black">
+      <nav className="max-w-7xl mx-auto px-[120px] pt-[60px] pb-6">
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-primary">Portfolio</span>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
+            <div className="relative">
+              <img
+                src={logo}
+                alt="Pedro Cantanhêde Logo"
+                className="h-10 w-auto" 
+              />
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFC700] transform -skew-x-12"></div>
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/95 backdrop-blur-md border-b border-border">
-            {navItems.map((item) => (
+          {/* Menu Items */}
+          <div className="flex items-center space-x-[50px]">
+            {menuItems.map((item) => (
               <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200"
+                key={item.id}
+                onClick={() => handleMenuClick(item.id)}
+                className={`font-montserrat text-[18px] transition-colors duration-200 bg-transparent border-none outline-none cursor-pointer ${
+                  activeItem === item.id
+                    ? "text-[#FFB400]"
+                    : "text-[#C1C1C1] hover:text-white"
+                }`}
               >
-                {item.name}
+                {item.label}
               </button>
             ))}
           </div>
+
+          {/* Contact Button */}
+          <div className="flex-shrink-0">
+            <Button
+              variant="contact"
+              size="standard"
+            >
+              Contact Me
+            </Button>
+          </div>
         </div>
-      )}
-    </nav>
+      </nav>
+    </header>
   );
 };
 
