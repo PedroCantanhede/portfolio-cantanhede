@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/sections/HeroSection';
 import AboutSection from '@/sections/AboutSection';
+import JourneySection from '@/sections/JourneySection';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <main>
         <HeroSection />
         <AboutSection /> 
+        <JourneySection />
       </main>
     </div>
   );
