@@ -41,24 +41,29 @@ const HeroSection = () => {
             <h1 className="text-[63px] font-bold text-white font-poppins leading-none m-0 p-0">
               Pedro Cantanhêde
             </h1>
-            <h2 className="text-[26px] font-semibold text-[#FFB400] font-poppins mt-2" style={{fontWeight: 600}}>
+            <h2
+              className="text-[26px] font-semibold text-[#FFB400] font-poppins mt-2"
+              style={{ fontWeight: 600 }}
+            >
               Front-end Developer
             </h2>
           </div>
 
           {/* Description */}
           <div className="max-w-2xl mx-auto">
-            <p className="text-[#E1E1E1] text-[19px] leading-relaxed font-poppins" style={{fontWeight: 500}}>
+            <p
+              className="text-[#E1E1E1] text-[19px] leading-relaxed font-poppins"
+              style={{ fontWeight: 500 }}
+            >
               <span className="block">
-                With a passion for design and development,
+                With a passion for design and development, I focus on building
+                clean, responsive
               </span>
               <span className="block">
-                I focus on building clean, responsive front-end solutions that
-                connect aesthetics with performance
+                front-end solutions that connect aesthetics with performance and
+                create
               </span>
-              <span className="block">
-                and create meaningful digital impact.
-              </span>
+              <span className="block">meaningful digital impact.</span>
             </p>
           </div>
 

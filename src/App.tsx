@@ -1,5 +1,6 @@
-import HeroSection from '@/sections/HeroSection';
 import Navigation from '@/components/Navigation';
+import HeroSection from '@/sections/HeroSection';
+import AboutSection from '@/sections/AboutSection';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <Navigation />
       <main>
         <HeroSection />
+        <AboutSection /> 
       </main>
     </div>
   );
