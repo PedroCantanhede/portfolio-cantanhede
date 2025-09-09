@@ -3,6 +3,7 @@ import HeroSection from '@/sections/HeroSection';
 import AboutSection from '@/sections/AboutSection';
 import JourneySection from '@/sections/JourneySection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
+import ProjectsSection from '@/sections/ProjectsSection';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <AboutSection /> 
         <JourneySection />
         <TestimonialsSection />
+        <ProjectsSection />
       </main>
     </div>
   );
