@@ -1,4 +1,6 @@
 import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+
 import HeroSection from '@/sections/HeroSection';
 import AboutSection from '@/sections/AboutSection';
 import JourneySection from '@/sections/JourneySection';
@@ -18,6 +20,7 @@ function App() {
         <ProjectsSection />
         <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }
