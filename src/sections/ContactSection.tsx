@@ -1,213 +1,215 @@
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import mailWhite from '@/assets/icons/mail-white.svg';
+import githubWhite from '@/assets/icons/github-white.svg';
+import linkedinWhite from '@/assets/icons/linkedin-white.svg';
+import mailIcon from '@/assets/icons/mail.svg';
+import buttonSecondary from '@/assets/button-secondary.svg';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import type { ContactForm } from '@/types';
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState<ContactForm>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simular envio do formulário
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    
-    setIsSubmitting(false);
-    alert('Mensagem enviada com sucesso!');
-  };
-
   const contactInfo = [
     {
-      icon: Mail,
-      title: 'Email',
-      value: 'contato@exemplo.com',
-      href: 'mailto:contato@exemplo.com'
+      id: 1,
+      icon: mailWhite,
+      label: "Email",
+      value: "pedrohc.cantanhede@gmail.com"
     },
     {
-      icon: Phone,
-      title: 'Telefone',
-      value: '+55 (11) 99999-9999',
-      href: 'tel:+5511999999999'
+      id: 2,
+      icon: githubWhite,
+      label: "GitHub",
+      value: "github.com/PedroCantanhede"
     },
     {
-      icon: MapPin,
-      title: 'Localização',
-      value: 'São Paulo, SP - Brasil',
-      href: '#'
+      id: 3,
+      icon: linkedinWhite,
+      label: "LinkedIn",
+      value: "linkedin.com/in/pedro-cantanhede"
     }
   ];
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section className="py-20 px-4" style={{ paddingTop: "200px" }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Entre em Contato
+        {/* Title and Subtitle */}
+        <div className="text-center mb-16" style={{ paddingBottom: "60px" }}>
+          <h2
+            className="text-white font-extrabold mb-4"
+            style={{ 
+              fontFamily: "Inter", 
+              fontSize: "45px", 
+              fontWeight: 800, 
+              color: "#FFFFFF",
+              margin: 0,
+              padding: 0
+            }}
+          >
+            Let's talk!
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Vamos conversar sobre seu próximo projeto ou oportunidade de colaboração
+          <p
+            className="text-[#FFB400] font-semibold"
+            style={{ 
+              fontFamily: "Inter", 
+              fontSize: "14px", 
+              fontWeight: 600, 
+              color: "#FFB400",
+              margin: 0,
+              padding: 0
+            }}
+          >
+            Let's work together
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-6">
-                Informações de Contato
+        {/* Two Column Layout */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 items-start w-fit" style={{ gap: "32px" }}>
+            {/* Left Column - Get in touch */}
+            <div className="flex flex-col items-center">
+              <h3
+                className="text-white font-medium mb-8 w-full"
+                style={{ 
+                  fontFamily: "Inter", 
+                  fontSize: "17px", 
+                  fontWeight: 500, 
+                  color: "#FFFFFF",
+                  margin: 0,
+                  paddingBottom: "32px",
+                  textAlign: "left"
+                }}
+              >
+                Get in touch
               </h3>
-              <p className="text-muted-foreground mb-8">
-                Estou sempre interessado em novos projetos e oportunidades. 
-                Entre em contato comigo e vamos conversar sobre como posso ajudar você.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactInfo.map((info) => {
-                const Icon = info.icon;
-                return (
-                  <div key={info.title} className="flex items-center space-x-4">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Icon className="h-6 w-6 text-primary" />
+              
+              {/* Contact Cards */}
+              <div className="w-full" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                {contactInfo.map((contact) => (
+                  <div
+                    key={contact.id}
+                    className="flex items-center justify-between p-4 border hover:bg-gray-800/50 transition-colors cursor-pointer"
+                    style={{ 
+                      width: "600px",
+                      height: "78px",
+                      borderColor: "#1F2937", 
+                      borderRadius: "8px",
+                      backgroundColor: "transparent"
+                    }}
+                  >
+                    <div className="flex items-center" style={{ gap: "16px", paddingLeft: "17px" }}>
+                      <img 
+                        src={contact.icon} 
+                        alt={contact.label} 
+                        className="w-6 h-6"
+                      />
+                      <div>
+                        <p
+                          className="text-white font-medium"
+                          style={{ 
+                            fontFamily: "Inter", 
+                            fontSize: "13.6px", 
+                            fontWeight: 500, 
+                            color: "#FFFFFF",
+                            margin: 0,
+                            padding: 0
+                          }}
+                        >
+                          {contact.label}
+                        </p>
+                        <p
+                          className="text-gray-400"
+                          style={{ 
+                            fontFamily: "Inter", 
+                            fontSize: "11.9px", 
+                            fontWeight: 400, 
+                            color: "#9CA3AF",
+                            margin: 0,
+                            padding: 0,
+                            paddingTop: "4px"
+                          }}
+                        >
+                          {contact.value}
+                        </p>
                       </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">{info.title}</h4>
-                      <a
-                        href={info.href}
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        {info.value}
-                      </a>
-                    </div>
+                    <img 
+                      src={buttonSecondary} 
+                      alt="Arrow" 
+                      className="w-4 h-4"
+                      style={{ paddingRight: "17px" }}
+                    />
                   </div>
-                );
-              })}
-            </div>
-
-            <div className="pt-8">
-              <h4 className="font-semibold text-foreground mb-4">Horário de Atendimento</h4>
-              <div className="text-muted-foreground space-y-1">
-                <p>Segunda - Sexta: 9:00 - 18:00</p>
-                <p>Sábado: 10:00 - 14:00</p>
-                <p>Domingo: Fechado</p>
+                ))}
               </div>
             </div>
+
+            {/* Right Column - Ready to start your project? */}
+            <div className="flex flex-col items-start">
+              <h3
+                className="text-white font-medium mb-6 w-full"
+                style={{ 
+                  fontFamily: "Inter", 
+                  fontSize: "17px", 
+                  fontWeight: 500, 
+                  color: "#FFFFFF",
+                  margin: 0,
+                  paddingBottom: "24px",
+                  textAlign: "left"
+                }}
+              >
+                Ready to start your project?
+              </h3>
+              
+              <p
+                className="text-white mb-8 leading-relaxed w-full"
+                style={{ 
+                  fontFamily: "Inter", 
+                  fontSize: "13.6px", 
+                  fontWeight: 400, 
+                  color: "#9CA3AF",
+                  lineHeight: "24px",
+                  margin: 0,
+                  paddingBottom: "40px",
+                  textAlign: "left"
+                }}
+              >
+                <span className="block">Looking for a developer who combines design and code to deliver seamless user</span>
+                <span className="block">experiences? Get in touch, and let's bring your ideas to life.</span>
+              </p>
+
+              {/* Contact Button */}
+              <Button
+                variant="contact"
+                size="standard"
+                className="text-black flex items-center w-full"
+                style={{ 
+                  width: "600px",
+                  height: "48px",
+                  gap: "8px"
+                }}
+              >
+                <img 
+                  src={mailIcon} 
+                  alt="Email" 
+                  className="w-5 h-5"
+                />
+                <span>Contact me</span>
+              </Button>
+
+              <p
+                className="text-gray-400 mt-4 w-full"
+                style={{ 
+                  fontFamily: "Inter", 
+                  fontSize: "11.9px", 
+                  fontWeight: 400, 
+                  color: "#6B7280",
+                  margin: 0,
+                  paddingTop: "12px",
+                  textAlign: "center"
+                }}
+              >
+                Usually responds within 24 hours.
+              </p>
+            </div>
           </div>
-
-          {/* Contact Form */}
-          <Card className="hover:shadow-lg transition-shadow">
-            <CardHeader>
-              <CardTitle>Envie uma Mensagem</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                      Nome *
-                    </label>
-                    <Input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Seu nome completo"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                      Email *
-                    </label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="seu@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Assunto *
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="Assunto da mensagem"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Mensagem *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Descreva seu projeto ou dúvida..."
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    'Enviando...'
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Enviar Mensagem
-                    </>
-                  )}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

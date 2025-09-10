@@ -4,6 +4,7 @@ import AboutSection from '@/sections/AboutSection';
 import JourneySection from '@/sections/JourneySection';
 import TestimonialsSection from '@/sections/TestimonialsSection';
 import ProjectsSection from '@/sections/ProjectsSection';
+import ContactSection from '@/sections/ContactSection';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <JourneySection />
         <TestimonialsSection />
         <ProjectsSection />
+        <ContactSection />
       </main>
     </div>
   );
