@@ -47,6 +47,22 @@ body {
   min-height: 100vh;
 }
 
+/* Visibility helpers aligned to explicit breakpoints */
+.only-mobile {
+  display: none;
+}
+.hide-mobile {
+  display: inherit;
+}
+@media (max-width: 639px) {
+  .only-mobile {
+    display: block;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

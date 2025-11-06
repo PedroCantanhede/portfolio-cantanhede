@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import logo from "../assets/logo.svg";
+import menuIcon from "../assets/mobile/icon-menu.svg";
 import { useState } from "react";
 
 const Navigation = () => {
   const [activeItem, setActiveItem] = useState("Home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
     { id: "Home", label: "Home" },
@@ -34,7 +36,7 @@ const Navigation = () => {
           </div>
 
           {/* Menu Items */}
-          <div className="flex items-center space-x-[50px]">
+          <div className="hide-mobile flex items-center space-x-[50px]">
             {menuItems.map((item) => (
               <button
                 key={item.id}
@@ -51,13 +53,47 @@ const Navigation = () => {
           </div>
 
           {/* Contact Button */}
-          <div className="flex-shrink-0">
+          <div className="hide-mobile flex-shrink-0">
             <Button
               variant="contact"
               size="standard"
             >
               Contact Me
             </Button>
+          </div>
+
+          {/* Mobile menu button - only visible until 639px */}
+          <div className="only-mobile relative">
+            <button
+              aria-label="Abrir menu"
+              onClick={() => setIsMobileMenuOpen((v) => !v)}
+              className="appearance-none bg-transparent border-0 p-0 m-0 shadow-none focus:outline-none hover:bg-transparent active:bg-transparent"
+            >
+              <img src={menuIcon} alt="Menu" className="w-[17px] h-[17px]" />
+            </button>
+            {isMobileMenuOpen && (
+              <div className="absolute right-0 mt-3 w-56 rounded-md bg-black shadow-lg">
+                <div className="flex flex-col py-2">
+                  {menuItems.map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => {
+                        handleMenuClick(item.id);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="text-left px-4 py-3 font-montserrat text-[16px] text-[#C1C1C1] hover:text-white hover:bg-white/5 transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                  <div className="px-4 pt-2 pb-3">
+                    <Button variant="contact" size="standard" className="w-full">
+                      Contact Me
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </nav>

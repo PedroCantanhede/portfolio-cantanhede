@@ -108,7 +108,10 @@ const TestimonialsSection = () => {
                      textAlign: "justify"
                    }}
                  >
-                  "XXXXXXXX."
+                  <span className="block">"Pedro is a committed and understanding</span>
+                  <span className="block">professional with great communication skills.</span>
+                  <span className="block">Supportive and focused, he helps the team</span>
+                  <span className="block">overcome challenges and reach success together."</span>
                 </p>
                 
                  {/* Author Info */}
@@ -118,7 +121,7 @@ const TestimonialsSection = () => {
                        className="text-white font-medium"
                        style={{ fontFamily: "Inter", fontSize: "11.9px" }}
                      >
-                       XX
+                       LS
                      </span>
                    </div>
                   <div style={{ margin: 0, padding: 0, textAlign: "left" }}>
@@ -126,13 +129,13 @@ const TestimonialsSection = () => {
                       className="text-white font-medium"
                       style={{ fontFamily: "Inter", fontSize: "13.6px", margin: 0, padding: 0, textAlign: "left" }}
                     >
-                      XX
+                      Luciane Santos
                     </p>
                      <p
                        className="text-[#6B7280]"
                        style={{ fontFamily: "Inter", fontSize: "11.9px", fontWeight: 400, paddingTop: "4px", margin: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, textAlign: "left" }}
                      >
-                      XX
+                      Frontend Developer
                     </p>
                   </div>
                 </div>
@@ -162,7 +165,10 @@ const TestimonialsSection = () => {
                      textAlign: "justify"
                    }}
                  >
-                  "XXXXXXXX."
+                  <span className="block">"Pedro is an exceptional and visionary professional</span>
+                  <span className="block">who turned ideas into real solutions. Intelligent,</span>
+                  <span className="block">respectful, and driven, he inspires those around</span>
+                  <span className="block">him and consistently delivers excellence."</span>
                 </p>
                 
                  {/* Author Info */}
@@ -172,7 +178,7 @@ const TestimonialsSection = () => {
                        className="text-white font-medium"
                        style={{ fontFamily: "Inter", fontSize: "11.9px" }}
                      >
-                       XX
+                       CP
                      </span>
                    </div>
                   <div style={{ margin: 0, padding: 0, textAlign: "left" }}>
@@ -180,13 +186,13 @@ const TestimonialsSection = () => {
                       className="text-white font-medium"
                       style={{ fontFamily: "Inter", fontSize: "13.6px", margin: 0, padding: 0, textAlign: "left" }}
                     >
-                      XX
+                      Carlos Eduardo Pantoja
                     </p>
                      <p
                        className="text-[#6B7280]"
                        style={{ fontFamily: "Inter", fontSize: "11.9px", fontWeight: 400, paddingTop: "4px", margin: 0, paddingLeft: 0, paddingRight: 0, paddingBottom: 0, textAlign: "left" }}
                      >
-                      XX
+                      Professor at CEFET-RJ
                     </p>
                   </div>
                 </div>
