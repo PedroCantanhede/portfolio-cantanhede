@@ -63,6 +63,13 @@ body {
   }
 }
 
+/* Skills grid responsive */
+@media (min-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 186.66px) !important;
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

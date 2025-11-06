@@ -103,7 +103,7 @@ const AboutSection = () => {
             </h3>
 
             <div className="flex justify-center">
-              <div className="grid grid-cols-3" style={{ gap: "16px" }}>
+              <div className="grid grid-cols-1 skills-grid w-fit" style={{ gap: "16px" }}>
                 {/* Row 1 */}
                 <div className="w-[186.66px] h-[38px] bg-[#171717] border border-[#1F2937] rounded-[6px] flex items-center">
                   <img
