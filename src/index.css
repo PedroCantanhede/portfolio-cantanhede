@@ -201,6 +201,98 @@ body {
   }
 }
 
+/* Navigation responsive */
+.nav-wrapper {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.nav-container {
+  justify-content: space-between !important;
+}
+
+.nav-mobile-menu {
+  padding-right: 16px !important;
+}
+
+/* Mobile only - logo menor e padding no menu */
+@media (max-width: 639px) {
+  .nav-logo img {
+    height: 45px !important;
+  }
+  
+  .nav-wrapper {
+    padding-top: 20px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .nav-wrapper {
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+    padding-top: 60px !important;
+  }
+  
+  .nav-container {
+    justify-content: center !important;
+    position: relative !important;
+  }
+  
+  .nav-logo {
+    position: absolute !important;
+    left: 120px !important;
+  }
+  
+  .nav-menu {
+    flex: 1 !important;
+    justify-content: center !important;
+  }
+  
+  .nav-contact {
+    position: absolute !important;
+    right: 120px !important;
+  }
+  
+  .nav-mobile-menu {
+    padding-right: 0 !important;
+  }
+}
+
+/* Hero Section responsive */
+.hero-description-mobile {
+  display: none !important;
+}
+
+@media (max-width: 639px) {
+  .hero-name {
+    font-size: 38px !important;
+  }
+  
+  .hero-role {
+    font-size: 16px !important;
+  }
+  
+  .hero-description-wrapper {
+    padding-top: 20px !important;
+  }
+  
+  .hero-description {
+    font-size: 14px !important;
+  }
+  
+  .hero-description-desktop {
+    display: none !important;
+  }
+  
+  .hero-description-mobile {
+    display: block !important;
+  }
+  
+  .hero-buttons {
+    flex-direction: column !important;
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -369,6 +461,14 @@ button.text-white {
   background-position: center 2.5rem;
   background-repeat: no-repeat;
   padding-top: 8rem;
+}
+
+/* Hero Section background mobile */
+@media (max-width: 639px) {
+  .hero-section {
+    background-image: url('/src/assets/mobile/background-mobile.svg') !important;
+    background-size: 339px 564px !important;
+  }
 }
 
 /* Remove all margins and padding from hero name */

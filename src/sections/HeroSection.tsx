@@ -38,11 +38,11 @@ const HeroSection = () => {
 
           {/* Name + Role */}
           <div>
-            <h1 className="text-[63px] font-bold text-white font-poppins leading-none m-0 p-0">
+            <h1 className="hero-name text-[63px] font-bold text-white font-poppins leading-none m-0 p-0">
               Pedro Cantanhêde
             </h1>
             <h2
-              className="text-[26px] font-semibold text-[#FFB400] font-poppins mt-2"
+              className="hero-role text-[26px] font-semibold text-[#FFB400] font-poppins mt-2"
               style={{ fontWeight: 600 }}
             >
               Front-end Developer
@@ -50,25 +50,37 @@ const HeroSection = () => {
           </div>
 
           {/* Description */}
-          <div className="max-w-2xl mx-auto">
+          <div className="hero-description-wrapper max-w-2xl mx-auto">
             <p
-              className="text-[#E1E1E1] text-[19px] leading-relaxed font-poppins"
+              className="hero-description text-[#E1E1E1] text-[19px] leading-relaxed font-poppins"
               style={{ fontWeight: 500 }}
             >
-              <span className="block">
-                With a passion for design and development, I focus on building
-                clean, responsive
+              {/* Desktop version */}
+              <span className="hero-description-desktop block">
+                <span className="block">
+                  With a passion for design and development, I focus on building
+                  clean, responsive
+                </span>
+                <span className="block">
+                  front-end solutions that connect aesthetics with performance and
+                  create
+                </span>
+                <span className="block">meaningful digital impact.</span>
               </span>
-              <span className="block">
-                front-end solutions that connect aesthetics with performance and
-                create
+              
+              {/* Mobile version */}
+              <span className="hero-description-mobile block">
+                <span className="block">With a passion for design and development, I</span>
+                <span className="block">focus on building clean, responsive front-end</span>
+                <span className="block">solutions that connect aesthetics with</span>
+                <span className="block">performance and create meaningful digital</span>
+                <span className="block">impact.</span>
               </span>
-              <span className="block">meaningful digital impact.</span>
             </p>
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-row gap-[25px] justify-center items-center mt-[2.813rem]">
+          <div className="hero-buttons flex flex-row gap-[25px] justify-center items-center mt-[2.813rem]">
             <Button onClick={scrollToContact} variant="contact" size="standard">
               Contact me
             </Button>

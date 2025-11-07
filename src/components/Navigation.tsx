@@ -21,10 +21,10 @@ const Navigation = () => {
 
   return (
     <header className="bg-black">
-      <nav className="max-w-7xl mx-auto px-[120px] pt-[60px] pb-6">
-        <div className="flex items-center justify-between">
+      <nav className="nav-wrapper max-w-7xl mx-auto pt-[60px] pb-6">
+        <div className="nav-container flex items-center">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="nav-logo flex-shrink-0">
             <div className="relative">
               <img
                 src={logo}
@@ -36,7 +36,7 @@ const Navigation = () => {
           </div>
 
           {/* Menu Items */}
-          <div className="hide-mobile flex items-center space-x-[50px]">
+          <div className="nav-menu hide-mobile flex items-center space-x-[50px]">
             {menuItems.map((item) => (
               <button
                 key={item.id}
@@ -53,7 +53,7 @@ const Navigation = () => {
           </div>
 
           {/* Contact Button */}
-          <div className="hide-mobile flex-shrink-0">
+          <div className="nav-contact hide-mobile flex-shrink-0">
             <Button
               variant="contact"
               size="standard"
@@ -63,13 +63,13 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button - only visible until 639px */}
-          <div className="only-mobile relative">
+          <div className="nav-mobile-menu only-mobile relative">
             <button
               aria-label="Abrir menu"
               onClick={() => setIsMobileMenuOpen((v) => !v)}
               className="appearance-none bg-transparent border-0 p-0 m-0 shadow-none focus:outline-none hover:bg-transparent active:bg-transparent"
             >
-              <img src={menuIcon} alt="Menu" className="w-[17px] h-[17px]" />
+              <img src={menuIcon} alt="Menu" className="w-[20px] h-[20px]" />
             </button>
             {isMobileMenuOpen && (
               <div className="absolute right-0 mt-3 w-56 rounded-md bg-black shadow-lg">
