@@ -16,29 +16,29 @@ const TimelineItem = ({ title, organization, period, description }: TimelineItem
       <div className="absolute -translate-x-1/2" style={{ left: '12px', top: '14px', bottom: 0, borderLeft: '1px solid #1F2937' }}></div>
       <div>
         <h4
-          className="mb-1"
-          style={{ fontFamily: "Inter", fontSize: "17px", fontWeight: 500, color: "#FFFFFF" }}
+          className="mb-1 break-words"
+          style={{ fontFamily: "Inter", fontSize: "17px", fontWeight: 500, color: "#FFFFFF", wordBreak: "break-word", overflowWrap: "break-word" }}
         >
           {title}
         </h4>
         {organization && (
           <p
-            className="mb-1"
-            style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#9CA3AF" }}
+            className="mb-1 break-words"
+            style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#9CA3AF", wordBreak: "break-word", overflowWrap: "break-word" }}
           >
             {organization}
           </p>
         )}
         <p
-          className="mb-2"
-          style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#6B7280" }}
+          className="mb-2 break-words"
+          style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#6B7280", wordBreak: "break-word", overflowWrap: "break-word" }}
         >
           {period}
         </p>
         {description && (
           <p
-            className="leading-relaxed"
-            style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#9CA3AF" }}
+            className="leading-relaxed break-words"
+            style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#9CA3AF", wordBreak: "break-word", overflowWrap: "break-word" }}
           >
             {description}
           </p>
@@ -75,9 +75,9 @@ const JourneySection = () => {
 
           {/* Two Columns Layout */}
           <div className="w-full flex justify-center">
-            <div className="grid grid-cols-2 gap-[32px] mx-auto">
+            <div className="grid grid-cols-1 journey-grid gap-[32px] mx-auto">
             {/* Education Column */}
-            <div className="text-left max-w-[540px]">
+            <div className="text-left max-w-[540px] w-full">
               <div className="flex items-center mb-8" style={{ gap: "12px" }}>
                 <img src={educationIcon} alt="Education" className="w-6 h-6" />
                 <h3
@@ -104,7 +104,7 @@ const JourneySection = () => {
             </div>
 
             {/* Experience Column */}
-            <div className="text-left max-w-[540px]">
+            <div className="text-left max-w-[540px] w-full">
               <div className="flex items-center mb-8" style={{ gap: "12px" }}>
                 <img src={experienceIcon} alt="Experience" className="w-6 h-6" />
                 <h3

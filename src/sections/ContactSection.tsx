@@ -62,9 +62,9 @@ const ContactSection = () => {
 
         {/* Two Column Layout */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 items-start w-fit" style={{ gap: "32px" }}>
+          <div className="contact-grid grid items-start w-fit" style={{ gap: "32px" }}>
             {/* Left Column - Get in touch */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center contact-left-column">
               <h3
                 className="text-white font-medium mb-8 w-full"
                 style={{ 
@@ -85,9 +85,8 @@ const ContactSection = () => {
                 {contactInfo.map((contact) => (
                   <div
                     key={contact.id}
-                    className="flex items-center justify-between p-4 border hover:bg-gray-800/50 transition-colors cursor-pointer"
+                    className="contact-card flex items-center justify-between p-4 border hover:bg-gray-800/50 transition-colors cursor-pointer"
                     style={{ 
-                      width: "600px",
                       height: "78px",
                       borderColor: "#1F2937", 
                       borderRadius: "8px",
@@ -142,7 +141,7 @@ const ContactSection = () => {
             </div>
 
             {/* Right Column - Ready to start your project? */}
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start contact-right-column">
               <h3
                 className="text-white font-medium mb-6 w-full"
                 style={{ 
@@ -179,9 +178,8 @@ const ContactSection = () => {
               <Button
                 variant="contact"
                 size="standard"
-                className="text-black flex items-center w-full"
+                className="contact-button text-black flex items-center w-full"
                 style={{ 
-                  width: "600px",
                   height: "48px",
                   gap: "8px"
                 }}

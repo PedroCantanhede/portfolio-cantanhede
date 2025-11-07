@@ -76,15 +76,15 @@ const ProjectsSection = () => {
 
           {/* Projects Grid */}
           <div className="w-full flex justify-center">
-            <div className="grid grid-cols-3 gap-[36px] mx-auto">
+            <div className="projects-grid grid gap-[36px] mx-auto">
               {projects.map((project) => (
                 <div
                   key={project.id}
-                  className="overflow-hidden"
-                  style={{ width: "354.67px", height: "318.33px", backgroundColor: "#000000" }}
+                  className="overflow-hidden project-card"
+                  style={{ height: "318.33px", backgroundColor: "#000000" }}
                 >
                   {/* Project Image */}
-                  <div style={{ width: "354.67px", height: "198.33px", overflow: "hidden" }}>
+                  <div className="project-image" style={{ height: "198.33px", overflow: "hidden" }}>
                     <img
                       src={project.image}
                       alt={project.title}

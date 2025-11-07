@@ -26,11 +26,11 @@ const TestimonialsSection = () => {
 
           {/* Three Testimonial Cards */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-3 gap-[25px] mx-auto">
+            <div className="testimonials-grid grid grid-cols-1 gap-[25px] mx-auto">
               {/* First Card - Real Testimonial */}
                <div 
-                 className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col"
-                 style={{ width: "394.67px", height: "265px", borderRadius: "6px" }}
+                 className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col w-full"
+                 style={{ height: "265px", borderRadius: "6px" }}
                >
                  {/* Quote Icon */}
                  <div className="mb-4" style={{ paddingLeft: "25px", paddingTop: "25px", marginBottom: "20px" }}>
@@ -86,8 +86,8 @@ const TestimonialsSection = () => {
 
               {/* Second Card - Placeholder */}
                <div 
-                 className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col"
-                 style={{ width: "394.67px", height: "265px", borderRadius: "6px" }}
+                 className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col w-full"
+                 style={{ height: "265px", borderRadius: "6px" }}
                >
                  {/* Quote Icon */}
                  <div className="mb-4" style={{ paddingLeft: "25px", paddingTop: "25px", marginBottom: "20px" }}>
@@ -143,8 +143,8 @@ const TestimonialsSection = () => {
 
               {/* Third Card - Placeholder */}
                <div 
-                 className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col"
-                 style={{ width: "394.67px", height: "265px", borderRadius: "6px" }}
+                 className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col w-full"
+                 style={{ height: "265px", borderRadius: "6px" }}
                >
                  {/* Quote Icon */}
                  <div className="mb-4" style={{ paddingLeft: "25px", paddingTop: "25px", marginBottom: "20px" }}>

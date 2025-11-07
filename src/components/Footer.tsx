@@ -26,31 +26,15 @@ const Footer = () => {
       
       {/* Footer Content */}
       <div 
-        className="mx-auto flex justify-between items-center"
+        className="footer-content mx-auto"
         style={{ 
-          paddingLeft: "175.5px",
-          paddingRight: "175.5px",
           paddingTop: "42px",
           paddingBottom: "50px"
         }}
       >
-        {/* Copyright Text */}
-        <p
-          style={{ 
-            fontFamily: "Inter", 
-            fontSize: "14px", 
-            fontWeight: 400, 
-            color: "#A9A9A9",
-            margin: 0,
-            padding: 0
-          }}
-        >
-          © {currentYear} All rights reserved.
-        </p>
-
         {/* Social Icons */}
         <div 
-          className="flex items-center"
+          className="footer-icons flex items-center"
           style={{ gap: "21px" }}
         >
           {socialLinks.map((social) => (
@@ -73,6 +57,21 @@ const Footer = () => {
             </a>
           ))}
         </div>
+
+        {/* Copyright Text */}
+        <p
+          className="footer-copyright"
+          style={{ 
+            fontFamily: "Inter", 
+            fontSize: "14px", 
+            fontWeight: 400, 
+            color: "#A9A9A9",
+            margin: 0,
+            padding: 0
+          }}
+        >
+          © {currentYear} All rights reserved.
+        </p>
       </div>
     </footer>
   );
