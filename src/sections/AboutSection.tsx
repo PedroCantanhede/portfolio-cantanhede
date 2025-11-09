@@ -23,13 +23,13 @@ const AboutSection = () => {
           {/* Title and Subtitle */}
           <div>
             <h2
-              className="text-[45px] font-extrabold text-white"
+              className="section-title text-[45px] font-extrabold text-white"
               style={{ fontFamily: "Inter", margin: 0, padding: 0 }}
             >
               About Me
             </h2>
             <p
-              className="text-[14px] font-semibold text-[#FFB400]"
+              className="section-subtitle text-[14px] font-semibold text-[#FFB400]"
               style={{ fontFamily: "Inter", margin: 0, padding: 0, paddingBottom: "27px" }}
             >
               Get to know me
@@ -48,7 +48,7 @@ const AboutSection = () => {
           {/* About Text */}
           <div className="max-w-2xl mx-auto space-y-6">
               <p
-                className="text-[17px] font-medium"
+                className="about-text text-[17px] font-medium"
                 style={{ fontFamily: "Inter", color: "#E1E1E1", lineHeight: "25px" }}
               >
                 <span className="block">
@@ -66,7 +66,7 @@ const AboutSection = () => {
               </p>
 
             <p
-              className="text-[17px] font-medium"
+              className="about-text text-[17px] font-medium"
               style={{ fontFamily: "Inter", color: "#E1E1E1", lineHeight: "25px" }}
             >
               <span className="block">
@@ -81,7 +81,7 @@ const AboutSection = () => {
             </p>
 
             <p
-              className="text-[17px] font-medium"
+              className="about-text text-[17px] font-medium"
               style={{ fontFamily: "Inter", color: "#E1E1E1", lineHeight: "25px" }}
             >
               <span className="block">

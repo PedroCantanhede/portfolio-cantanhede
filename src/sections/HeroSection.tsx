@@ -55,27 +55,15 @@ const HeroSection = () => {
               className="hero-description text-[#E1E1E1] text-[19px] leading-relaxed font-poppins"
               style={{ fontWeight: 500 }}
             >
-              {/* Desktop version */}
-              <span className="hero-description-desktop block">
-                <span className="block">
-                  With a passion for design and development, I focus on building
-                  clean, responsive
-                </span>
-                <span className="block">
-                  front-end solutions that connect aesthetics with performance and
-                  create
-                </span>
-                <span className="block">meaningful digital impact.</span>
+              <span className="block">
+                With a passion for design and development, I focus on building
+                clean, responsive
               </span>
-              
-              {/* Mobile version */}
-              <span className="hero-description-mobile block">
-                <span className="block">With a passion for design and development, I</span>
-                <span className="block">focus on building clean, responsive front-end</span>
-                <span className="block">solutions that connect aesthetics with</span>
-                <span className="block">performance and create meaningful digital</span>
-                <span className="block">impact.</span>
+              <span className="block">
+                front-end solutions that connect aesthetics with performance and
+                create
               </span>
+              <span className="block">meaningful digital impact.</span>
             </p>
           </div>
 

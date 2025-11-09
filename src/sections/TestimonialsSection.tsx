@@ -11,13 +11,13 @@ const TestimonialsSection = () => {
           {/* Title and Subtitle */}
           <div style={{ paddingBottom: "60px" }}>
             <h2
-              className="text-[45px] font-extrabold text-white"
+              className="section-title text-[45px] font-extrabold text-white"
               style={{ fontFamily: "Inter", margin: 0, padding: 0 }}
             >
               Testimonials
             </h2>
             <p
-              className="text-[14px] font-semibold text-[#FFB400]"
+              className="section-subtitle text-[14px] font-semibold text-[#FFB400]"
               style={{ fontFamily: "Inter", margin: 0, padding: 0, paddingBottom: "27px" }}
             >
               What colleagues say about me

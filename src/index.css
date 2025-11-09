@@ -259,10 +259,6 @@ body {
 }
 
 /* Hero Section responsive */
-.hero-description-mobile {
-  display: none !important;
-}
-
 @media (max-width: 639px) {
   .hero-name {
     font-size: 38px !important;
@@ -278,14 +274,6 @@ body {
   
   .hero-description {
     font-size: 14px !important;
-  }
-  
-  .hero-description-desktop {
-    display: none !important;
-  }
-  
-  .hero-description-mobile {
-    display: block !important;
   }
   
   .hero-buttons {
@@ -468,6 +456,109 @@ button.text-white {
   .hero-section {
     background-image: url('/src/assets/mobile/background-mobile.svg') !important;
     background-size: 339px 564px !important;
+  }
+}
+
+/* About Section responsive */
+@media (max-width: 639px) {
+  .about-text {
+    font-size: 13px !important;
+  }
+}
+
+/* Section titles and subtitles responsive */
+@media (max-width: 639px) {
+  .section-title {
+    font-size: 26px !important;
+  }
+  
+  .section-subtitle {
+    font-size: 16px !important;
+  }
+}
+
+/* Journey Section responsive */
+@media (max-width: 639px) {
+  .journey-section-title {
+    font-size: 21px !important;
+  }
+  
+  .journey-item-title {
+    font-size: 16px !important;
+  }
+  
+  .journey-item-organization {
+    font-size: 12px !important;
+  }
+  
+  .journey-item-period {
+    font-size: 12px !important;
+  }
+  
+  .journey-item-description {
+    font-size: 11px !important;
+    max-width: 280px !important;
+    line-height: 1.4 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+}
+
+/* Contact Section responsive */
+@media (max-width: 639px) {
+  .contact-section-title {
+    font-size: 16px !important;
+  }
+  
+  .contact-label {
+    font-size: 14px !important;
+  }
+  
+  .contact-value {
+    font-size: 12px !important;
+  }
+  
+  .contact-ready-title {
+    font-size: 16px !important;
+  }
+  
+  .contact-description {
+    font-size: 12px !important;
+  }
+  
+  .contact-response-time {
+    font-size: 11px !important;
+  }
+  
+  .contact-section-title {
+    max-width: calc(100% - 60px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .contact-card {
+    max-width: calc(100% - 60px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .contact-ready-title {
+    max-width: calc(100% - 60px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .contact-description {
+    max-width: calc(100% - 60px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  .contact-button {
+    max-width: calc(100% - 60px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 

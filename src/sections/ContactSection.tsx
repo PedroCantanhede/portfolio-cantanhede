@@ -33,7 +33,7 @@ const ContactSection = () => {
         {/* Title and Subtitle */}
         <div className="text-center mb-16" style={{ paddingBottom: "60px" }}>
           <h2
-            className="text-white font-extrabold mb-4"
+            className="section-title text-white font-extrabold mb-4"
             style={{ 
               fontFamily: "Inter", 
               fontSize: "45px", 
@@ -46,7 +46,7 @@ const ContactSection = () => {
             Let's talk!
           </h2>
           <p
-            className="text-[#FFB400] font-semibold"
+            className="section-subtitle text-[#FFB400] font-semibold"
             style={{ 
               fontFamily: "Inter", 
               fontSize: "14px", 
@@ -66,7 +66,7 @@ const ContactSection = () => {
             {/* Left Column - Get in touch */}
             <div className="flex flex-col items-center contact-left-column">
               <h3
-                className="text-white font-medium mb-8 w-full"
+                className="contact-section-title text-white font-medium mb-8 w-full"
                 style={{ 
                   fontFamily: "Inter", 
                   fontSize: "17px", 
@@ -101,7 +101,7 @@ const ContactSection = () => {
                       />
                       <div>
                         <p
-                          className="text-white font-medium"
+                          className="contact-label text-white font-medium"
                           style={{ 
                             fontFamily: "Inter", 
                             fontSize: "13.6px", 
@@ -114,7 +114,7 @@ const ContactSection = () => {
                           {contact.label}
                         </p>
                         <p
-                          className="text-gray-400"
+                          className="contact-value text-gray-400"
                           style={{ 
                             fontFamily: "Inter", 
                             fontSize: "11.9px", 
@@ -143,7 +143,7 @@ const ContactSection = () => {
             {/* Right Column - Ready to start your project? */}
             <div className="flex flex-col items-start contact-right-column">
               <h3
-                className="text-white font-medium mb-6 w-full"
+                className="contact-ready-title text-white font-medium mb-6 w-full"
                 style={{ 
                   fontFamily: "Inter", 
                   fontSize: "17px", 
@@ -158,7 +158,7 @@ const ContactSection = () => {
               </h3>
               
               <p
-                className="text-white mb-8 leading-relaxed w-full"
+                className="contact-description text-white mb-8 leading-relaxed w-full"
                 style={{ 
                   fontFamily: "Inter", 
                   fontSize: "13.6px", 
@@ -193,7 +193,7 @@ const ContactSection = () => {
               </Button>
 
               <p
-                className="text-gray-400 mt-4 w-full"
+                className="contact-response-time text-gray-400 mt-4 w-full"
                 style={{ 
                   fontFamily: "Inter", 
                   fontSize: "11.9px", 

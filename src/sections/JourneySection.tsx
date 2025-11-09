@@ -16,28 +16,28 @@ const TimelineItem = ({ title, organization, period, description }: TimelineItem
       <div className="absolute -translate-x-1/2" style={{ left: '12px', top: '14px', bottom: 0, borderLeft: '1px solid #1F2937' }}></div>
       <div>
         <h4
-          className="mb-1 break-words"
+          className="journey-item-title mb-1 break-words"
           style={{ fontFamily: "Inter", fontSize: "17px", fontWeight: 500, color: "#FFFFFF", wordBreak: "break-word", overflowWrap: "break-word" }}
         >
           {title}
         </h4>
         {organization && (
           <p
-            className="mb-1 break-words"
+            className="journey-item-organization mb-1 break-words"
             style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#9CA3AF", wordBreak: "break-word", overflowWrap: "break-word" }}
           >
             {organization}
           </p>
         )}
         <p
-          className="mb-2 break-words"
+          className="journey-item-period mb-2 break-words"
           style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#6B7280", wordBreak: "break-word", overflowWrap: "break-word" }}
         >
           {period}
         </p>
         {description && (
           <p
-            className="leading-relaxed break-words"
+            className="journey-item-description leading-relaxed break-words"
             style={{ fontFamily: "Inter", fontSize: "13.6px", fontWeight: 400, color: "#9CA3AF", wordBreak: "break-word", overflowWrap: "break-word" }}
           >
             {description}
@@ -60,13 +60,13 @@ const JourneySection = () => {
           {/* Title and Subtitle */}
           <div style={{ paddingBottom: "60px" }}>
             <h2
-              className="text-[45px] font-extrabold text-white"
+              className="section-title text-[45px] font-extrabold text-white"
               style={{ fontFamily: "Inter", margin: 0, padding: 0 }}
             >
               My Journey
             </h2>
             <p
-              className="text-[14px] font-semibold text-[#FFB400]"
+              className="section-subtitle text-[14px] font-semibold text-[#FFB400]"
               style={{ fontFamily: "Inter", margin: 0, padding: 0, paddingBottom: "27px" }}
             >
               Experience & Education
@@ -81,7 +81,7 @@ const JourneySection = () => {
               <div className="flex items-center mb-8" style={{ gap: "12px" }}>
                 <img src={educationIcon} alt="Education" className="w-6 h-6" />
                 <h3
-                  className="text-[25px] font-bold text-white"
+                  className="journey-section-title text-[25px] font-bold text-white"
                   style={{ fontFamily: "Inter" }}
                 >
                   Education
@@ -108,7 +108,7 @@ const JourneySection = () => {
               <div className="flex items-center mb-8" style={{ gap: "12px" }}>
                 <img src={experienceIcon} alt="Experience" className="w-6 h-6" />
                 <h3
-                  className="text-[25px] font-bold text-white"
+                  className="journey-section-title text-[25px] font-bold text-white"
                   style={{ fontFamily: "Inter" }}
                 >
                   Experience
