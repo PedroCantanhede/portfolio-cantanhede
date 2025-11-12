@@ -17,6 +17,7 @@ const AboutSection = () => {
     <section
       id="about"
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
+      style={{ marginBottom: "220px" }}
     >
       <div className="max-w-4xl mx-auto text-center">
         <div className="space-y-12">

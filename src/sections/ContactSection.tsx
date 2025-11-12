@@ -28,7 +28,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4" style={{ paddingTop: "200px", marginBottom: "130px" }}>
+    <section className="py-20 px-4" style={{ marginBottom: "130px" }}>
       <div className="max-w-7xl mx-auto">
         {/* Title and Subtitle */}
         <div className="text-center mb-16" style={{ paddingBottom: "60px" }}>

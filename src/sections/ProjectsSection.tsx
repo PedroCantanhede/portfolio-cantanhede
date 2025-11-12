@@ -54,7 +54,7 @@ const ProjectsSection = () => {
     <section
       id="projects"
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
-      style={{ paddingTop: "40px" }}
+      style={{ marginBottom: "200px" }}
     >
       <div className="max-w-6xl mx-auto text-center">
         <div className="space-y-12">

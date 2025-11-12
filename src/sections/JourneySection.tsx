@@ -52,8 +52,8 @@ const JourneySection = () => {
   return (
     <section
       id="journey"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
-      style={{ paddingTop: "200px" }}
+      className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
+      style={{ marginBottom: "220px" }}
     >
       <div className="max-w-6xl mx-auto text-center">
         <div className="space-y-12">

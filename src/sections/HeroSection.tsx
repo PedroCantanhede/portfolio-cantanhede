@@ -19,7 +19,8 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="hero-section min-h-screen flex items-start justify-center px-4 sm:px-6 lg:px-8 pt-16 mt-20"
+      className="hero-section flex items-start justify-center px-4 sm:px-6 lg:px-8 pt-16 mt-20"
+      style={{ marginBottom: "220px" }}
     >
       <div className="max-w-4xl mx-auto text-center">
         <div className="space-y-8">
