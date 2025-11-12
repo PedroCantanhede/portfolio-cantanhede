@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import logo from "../assets/logo.svg";
 import menuIcon from "../assets/mobile/icon-menu.svg";
-import { useState } from "react";
+import footerLinkedin from '@/assets/icons/footer-linkedin.svg';
+import footerBehance from '@/assets/icons/footer-behance.svg';
+import footerGithub from '@/assets/icons/footer-github.svg';
+import footerInstagram from '@/assets/icons/footer-instagram.svg';
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
   const [activeItem, setActiveItem] = useState("Home");
@@ -15,9 +19,27 @@ const Navigation = () => {
     { id: "Projects", label: "Projects" },
   ];
 
+  const socialLinks = [
+    { name: 'LinkedIn', icon: footerLinkedin, url: 'https://linkedin.com/in/pedro-cantanhede' },
+    { name: 'Behance', icon: footerBehance, url: 'https://behance.net' },
+    { name: 'GitHub', icon: footerGithub, url: 'https://github.com/PedroCantanhede' },
+    { name: 'Instagram', icon: footerInstagram, url: 'https://instagram.com' },
+  ];
+
   const handleMenuClick = (itemId: string) => {
     setActiveItem(itemId);
   };
+
+  // Lock body scroll when the mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      const previous = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previous;
+      };
+    }
+  }, [isMobileMenuOpen]);
 
   return (
     <header className="bg-black">
@@ -72,8 +94,26 @@ const Navigation = () => {
               <img src={menuIcon} alt="Menu" className="w-[20px] h-[20px]" />
             </button>
             {isMobileMenuOpen && (
-              <div className="absolute right-0 mt-3 w-56 rounded-md bg-black shadow-lg">
-                <div className="flex flex-col py-2">
+              <div
+                className="mobile-menu-overlay fixed inset-0 z-50 w-screen h-screen flex flex-col"
+                style={{ backgroundColor: "#000000", left: 0, right: 0, top: 0, bottom: 0, position: "fixed" }}
+              >
+                <div
+                  className="flex items-center justify-between"
+                  style={{ paddingLeft: 16, paddingRight: 16, paddingTop: 20, paddingBottom: 0 }}
+                >
+                  <img src={logo} alt="Logo" className="w-auto" style={{ height: "45px" }} />
+                  <button
+                    aria-label="Fechar menu"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-white leading-none bg-transparent border-0 w-[28px] h-[28px] flex items-center justify-center text-[28px]"
+                    style={{ paddingRight: 26 }}
+                  >
+                    ×
+                  </button>
+                </div>
+
+                <div className="mobile-menu-items-container flex flex-col items-center justify-center px-6" style={{ flex: '1' }}>
                   {menuItems.map((item) => (
                     <button
                       key={item.id}
@@ -81,16 +121,41 @@ const Navigation = () => {
                         handleMenuClick(item.id);
                         setIsMobileMenuOpen(false);
                       }}
-                      className="text-left px-4 py-3 font-montserrat text-[16px] text-[#C1C1C1] hover:text-white hover:bg-white/5 transition-colors"
+                      className="mobile-menu-link font-montserrat text-[18px] outline-none"
+                      style={{ color: "#E1E1E1", backgroundColor: "transparent", border: "none" }}
                     >
                       {item.label}
                     </button>
                   ))}
-                  <div className="px-4 pt-2 pb-3">
-                    <Button variant="contact" size="standard" className="w-full">
+                  
+                  <div className="flex flex-col items-center pt-6 w-full">
+                    <Button variant="contact" size="standard" className="overlay-contact-button">
                       Contact Me
                     </Button>
                   </div>
+                </div>
+
+                {/* Social Icons */}
+                <div className="mobile-menu-social-icons flex items-center justify-center gap-[21px] px-6" style={{ paddingTop: '40px', marginTop: 'auto' }}>
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition-opacity"
+                      aria-label={social.name}
+                    >
+                      <img 
+                        src={social.icon} 
+                        alt={social.name} 
+                        style={{ 
+                          width: "32px", 
+                          height: "32px" 
+                        }}
+                      />
+                    </a>
+                  ))}
                 </div>
               </div>
             )}
