@@ -19,7 +19,14 @@ const TestimonialsSection = () => {
             </h2>
             <p
               className="section-subtitle text-[14px] font-semibold text-[#FFB400]"
-              style={{ fontFamily: "Inter", margin: 0, padding: 0, paddingBottom: "27px" }}
+              style={{ 
+                fontFamily: "Inter", 
+                fontSize: "14px", 
+                fontWeight: 600, 
+                color: "#FFB400",
+                margin: 0,
+                padding: 0
+              }}
             >
               What colleagues say about me
             </p>
