@@ -12,23 +12,112 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { id: "Home", label: "Home" },
-    { id: "About", label: "About" },
-    { id: "Journey", label: "Journey" },
-    { id: "Testimonials", label: "Testimonials" },
-    { id: "Projects", label: "Projects" },
+    { id: "Home", label: "Home", sectionId: "home" },
+    { id: "About", label: "About", sectionId: "about" },
+    { id: "Journey", label: "Journey", sectionId: "journey" },
+    { id: "Testimonials", label: "Testimonials", sectionId: "testimonials" },
+    { id: "Projects", label: "Projects", sectionId: "projects" },
   ];
 
   const socialLinks = [
     { name: 'LinkedIn', icon: footerLinkedin, url: 'https://linkedin.com/in/pedro-cantanhede' },
-    { name: 'Behance', icon: footerBehance, url: 'https://behance.net' },
+    { name: 'Dribbble', icon: footerBehance, url: 'https://dribbble.com/pedro-cantanhede' },
     { name: 'GitHub', icon: footerGithub, url: 'https://github.com/PedroCantanhede' },
     { name: 'Instagram', icon: footerInstagram, url: 'https://instagram.com' },
   ];
 
-  const handleMenuClick = (itemId: string) => {
-    setActiveItem(itemId);
+  const scrollToSection = (sectionId: string) => {
+    // If it's home, scroll to top of page
+    if (sectionId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    
+    const element = document.querySelector(`#${sectionId}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
+  const handleMenuClick = (itemId: string, sectionId: string) => {
+    setActiveItem(itemId);
+    scrollToSection(sectionId);
+  };
+
+  const handleContactClick = () => {
+    scrollToSection("contact");
+  };
+
+  // Detect active section on scroll using Intersection Observer
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px', // Trigger when section is in the upper portion of viewport
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          const menuItem = menuItems.find(item => item.sectionId === sectionId);
+          if (menuItem) {
+            setActiveItem(menuItem.id);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections except home (we'll handle it separately)
+    menuItems.forEach((item) => {
+      if (item.sectionId !== "home") {
+        const section = document.querySelector(`#${item.sectionId}`);
+        if (section) {
+          observer.observe(section);
+        }
+      }
+    });
+
+    // Also observe contact section
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      observer.observe(contactSection);
+    }
+
+    // Handle scroll to detect when at top (Home section)
+    let scrollTimeout: NodeJS.Timeout;
+    const handleScroll = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const scrollPosition = window.scrollY;
+        
+        // Only set Home as active if we're at the very top and no other section is intersecting
+        if (scrollPosition < 50) {
+          const homeSection = document.querySelector('#home');
+          if (homeSection) {
+            const rect = homeSection.getBoundingClientRect();
+            // If home section is visible in viewport, set it as active
+            if (rect.top >= 0 && rect.top < window.innerHeight * 0.5) {
+              setActiveItem("Home");
+            }
+          }
+        }
+      }, 100);
+    };
+
+    // Check initial position
+    handleScroll();
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, []);
 
   // Lock body scroll when the mobile menu is open
   useEffect(() => {
@@ -42,7 +131,7 @@ const Navigation = () => {
   }, [isMobileMenuOpen]);
 
   return (
-    <header className="bg-black">
+    <header className="bg-black nav-header-desktop">
       <nav className="nav-wrapper max-w-7xl mx-auto pt-[60px] pb-6">
         <div className="nav-container flex items-center">
           {/* Logo */}
@@ -62,7 +151,7 @@ const Navigation = () => {
             {menuItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => handleMenuClick(item.id)}
+                onClick={() => handleMenuClick(item.id, item.sectionId)}
                 className={`font-montserrat text-[18px] transition-colors duration-200 bg-transparent border-none outline-none cursor-pointer ${
                   activeItem === item.id
                     ? "text-[#FFB400]"
@@ -79,6 +168,7 @@ const Navigation = () => {
             <Button
               variant="contact"
               size="standard"
+              onClick={handleContactClick}
             >
               Contact Me
             </Button>
@@ -118,7 +208,7 @@ const Navigation = () => {
                     <button
                       key={item.id}
                       onClick={() => {
-                        handleMenuClick(item.id);
+                        handleMenuClick(item.id, item.sectionId);
                         setIsMobileMenuOpen(false);
                       }}
                       className="mobile-menu-link font-montserrat text-[18px] outline-none"
@@ -129,7 +219,15 @@ const Navigation = () => {
                   ))}
                   
                   <div className="flex flex-col items-center pt-6 w-full">
-                    <Button variant="contact" size="standard" className="overlay-contact-button">
+                    <Button 
+                      variant="contact" 
+                      size="standard" 
+                      className="overlay-contact-button"
+                      onClick={() => {
+                        handleContactClick();
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
                       Contact Me
                     </Button>
                   </div>

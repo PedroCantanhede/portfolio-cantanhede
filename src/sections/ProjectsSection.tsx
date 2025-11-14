@@ -16,37 +16,43 @@ const ProjectsSection = () => {
       id: 1,
       title: "GerartAI",
       technologies: "Technologies: React, TypeScript, Node.js, Express, Prisma, PostgreSQL",
-      image: project1
+      image: project1,
+      url: "https://github.com/PedroCantanhede/Gerador_Artigos"
     },
     {
       id: 2,
       title: "Adote Pet",
       technologies: "Technologies: React, Next.js, Axios, Node.js, Spring, H2 Database",
-      image: project2
+      image: project2,
+      url: "https://github.com/PedroCantanhede/Adote-Pet"
     },
     {
       id: 3,
       title: "Pomodorinho",
       technologies: "Technologies: React Native, TypeScript, CSS, Android Studio",
-      image: project3
+      image: project3,
+      url: "https://github.com/PedroCantanhede/Pomodorinho"
     },
     {
       id: 4,
       title: "LO-FI Beats",
       technologies: "Technologies: HTML, CSS and JavaScript",
-      image: project4
+      image: project4,
+      url: "https://github.com/PedroCantanhede/music-player"
     },
     {
       id: 5,
       title: "Burst",
       technologies: "Technologies: PHP, JavaScript, MySQL",
-      image: project5
+      image: project5,
+      url: "https://github.com/PedroCantanhede/burst"
     },
     {
       id: 6,
       title: "OBInvest",
       technologies: "Technologies: Python, Streamlit, Matplotlib, yFinance",
-      image: project6
+      image: project6,
+      url: "https://github.com/PedroCantanhede/OBInvest"
     }
   ];
 
@@ -136,11 +142,19 @@ const ProjectsSection = () => {
 
                     {/* Button */}
                     <div className="flex-shrink-0">
-                      <img
-                        src={buttonMain}
-                        alt="View Project"
-                        className="w-6 h-6 cursor-pointer hover:opacity-80 transition-opacity"
-                      />
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block"
+                        aria-label={`View ${project.title} on GitHub`}
+                      >
+                        <img
+                          src={buttonMain}
+                          alt="View Project"
+                          className="w-6 h-6 cursor-pointer hover:opacity-80 transition-opacity"
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>

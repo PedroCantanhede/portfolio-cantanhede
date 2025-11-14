@@ -8,7 +8,7 @@ const Footer = () => {
 
   const socialLinks = [
     { name: 'LinkedIn', icon: footerLinkedin, url: 'https://linkedin.com/in/pedro-cantanhede' },
-    { name: 'Behance', icon: footerBehance, url: 'https://behance.net' },
+    { name: 'Dribbble', icon: footerBehance, url: 'https://dribbble.com/pedro-cantanhede' },
     { name: 'GitHub', icon: footerGithub, url: 'https://github.com/PedroCantanhede' },
     { name: 'Instagram', icon: footerInstagram, url: 'https://instagram.com' },
   ];

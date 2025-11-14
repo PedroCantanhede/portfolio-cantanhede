@@ -11,24 +11,27 @@ const ContactSection = () => {
       id: 1,
       icon: mailWhite,
       label: "Email",
-      value: "pedrohc.cantanhede@gmail.com"
+      value: "pedrohc.cantanhede@gmail.com",
+      url: "mailto:pedrohc.cantanhede@gmail.com"
     },
     {
       id: 2,
       icon: githubWhite,
       label: "GitHub",
-      value: "github.com/PedroCantanhede"
+      value: "github.com/PedroCantanhede",
+      url: "https://github.com/PedroCantanhede"
     },
     {
       id: 3,
       icon: linkedinWhite,
       label: "LinkedIn",
-      value: "linkedin.com/in/pedro-cantanhede"
+      value: "linkedin.com/in/pedro-cantanhede",
+      url: "https://www.linkedin.com/in/pedro-cantanhede/"
     }
   ];
 
   return (
-    <section className="py-20 px-4" style={{ marginBottom: "130px" }}>
+    <section id="contact" className="py-20 px-4" style={{ marginBottom: "130px" }}>
       <div className="max-w-7xl mx-auto">
         {/* Title and Subtitle */}
         <div className="text-center mb-16" style={{ paddingBottom: "60px" }}>
@@ -83,14 +86,18 @@ const ContactSection = () => {
               {/* Contact Cards */}
               <div className="w-full" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
                 {contactInfo.map((contact) => (
-                  <div
+                  <a
                     key={contact.id}
+                    href={contact.url}
+                    target={contact.id === 1 ? "_self" : "_blank"}
+                    rel={contact.id === 1 ? undefined : "noopener noreferrer"}
                     className="contact-card flex items-center justify-between p-4 border hover:bg-gray-800/50 transition-colors cursor-pointer"
                     style={{ 
                       height: "78px",
                       borderColor: "#1F2937", 
                       borderRadius: "8px",
-                      backgroundColor: "transparent"
+                      backgroundColor: "transparent",
+                      textDecoration: "none"
                     }}
                   >
                     <div className="flex items-center" style={{ gap: "16px", paddingLeft: "17px" }}>
@@ -135,7 +142,7 @@ const ContactSection = () => {
                       className="w-4 h-4"
                       style={{ paddingRight: "17px" }}
                     />
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -183,6 +190,7 @@ const ContactSection = () => {
                   height: "48px",
                   gap: "8px"
                 }}
+                onClick={() => window.location.href = "mailto:pedrohc.cantanhede@gmail.com"}
               >
                 <img 
                   src={mailIcon} 
