@@ -4,6 +4,7 @@ import linkedinWhite from '@/assets/icons/linkedin-white.svg';
 import mailIcon from '@/assets/icons/mail.svg';
 import buttonSecondary from '@/assets/button-secondary.svg';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
   const contactInfo = [
@@ -31,7 +32,15 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-4" style={{ marginBottom: "130px" }}>
+    <motion.section
+      id="contact"
+      className="py-20 px-4"
+      style={{ marginBottom: "130px" }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+    >
       <div className="max-w-7xl mx-auto">
         {/* Title and Subtitle */}
         <div className="text-center mb-16" style={{ paddingBottom: "60px" }}>
@@ -218,7 +227,7 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -9,6 +9,7 @@ import project6 from '@/assets/projects/project6.png';
 
 // Import button icon
 import buttonMain from '@/assets/button-main.svg';
+import { motion } from 'framer-motion';
 
 const ProjectsSection = () => {
   const projects = [
@@ -57,10 +58,14 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section
+    <motion.section
       id="projects"
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
       style={{ marginBottom: "200px" }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
     >
       <div className="max-w-6xl mx-auto text-center">
         <div className="space-y-12">
@@ -90,9 +95,15 @@ const ProjectsSection = () => {
           {/* Projects Grid */}
           <div className="w-full flex justify-center">
             <div className="projects-grid grid gap-[36px] mx-auto">
-              {projects.map((project) => (
-                <div
+              {projects.map((project, index) => (
+                <motion.div
                   key={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                <div
                   className="overflow-hidden project-card"
                   style={{ height: "318.33px", backgroundColor: "#000000" }}
                 >
@@ -158,12 +169,13 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                 </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

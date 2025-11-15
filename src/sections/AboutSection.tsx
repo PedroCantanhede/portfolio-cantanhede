@@ -7,6 +7,7 @@ import nodejsIcon from "@/assets/icons/nodejs.svg";
 import gitIcon from "@/assets/icons/git.svg";
 import azureIcon from "@/assets/icons/azure.svg";
 import downloadIcon from "@/assets/icons/download.svg";
+import { motion } from "framer-motion";
 
 const AboutSection = () => {
   const downloadResume = () => {
@@ -14,10 +15,14 @@ const AboutSection = () => {
   };
 
   return (
-    <section
+    <motion.section
       id="about"
       className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
       style={{ marginBottom: "220px" }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
     >
       <div className="max-w-4xl mx-auto text-center">
         <div className="space-y-12">
@@ -223,7 +228,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

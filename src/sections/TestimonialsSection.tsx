@@ -1,11 +1,16 @@
 import quoteIcon from "@/assets/icons/quote.svg";
+import { motion } from "framer-motion";
 
 const TestimonialsSection = () => {
   return (
-    <section
+    <motion.section
       id="testimonials"
       className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
       style={{ marginBottom: "220px"}}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
     >
       <div className="max-w-6xl mx-auto text-center">
         <div className="space-y-12">
@@ -36,6 +41,12 @@ const TestimonialsSection = () => {
           <div className="flex justify-center">
             <div className="testimonials-grid grid grid-cols-1 gap-[25px] mx-auto">
               {/* First Card - Real Testimonial */}
+               <motion.div
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.5, delay: 0.1 }}
+               >
                <div 
                  className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col w-full"
                  style={{ height: "265px", borderRadius: "6px" }}
@@ -91,8 +102,15 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
               </div>
+              </motion.div>
 
               {/* Second Card - Placeholder */}
+               <motion.div
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.5, delay: 0.2 }}
+               >
                <div 
                  className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col w-full"
                  style={{ height: "265px", borderRadius: "6px" }}
@@ -148,8 +166,15 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
               </div>
+              </motion.div>
 
               {/* Third Card - Placeholder */}
+               <motion.div
+                 initial={{ opacity: 0, y: 30 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ duration: 0.5, delay: 0.3 }}
+               >
                <div 
                  className="bg-[#171717] border border-[#1F2937] p-6 flex flex-col w-full"
                  style={{ height: "265px", borderRadius: "6px" }}
@@ -205,11 +230,12 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
               </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,5 +1,6 @@
 import educationIcon from "@/assets/icons/education.svg";
 import experienceIcon from "@/assets/icons/experience.svg";
+import { motion } from "framer-motion";
 
 type TimelineItemProps = {
   title: string;
@@ -10,7 +11,13 @@ type TimelineItemProps = {
 
 const TimelineItem = ({ title, organization, period, description }: TimelineItemProps) => {
   return (
-    <div className="relative mb-8 pl-[34px]">
+    <motion.div
+      className="relative mb-8 pl-[34px]"
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Bullet and vertical line */}
       <div className="absolute left-[12px] -translate-x-1/2 top-0 w-[12px] h-[12px] bg-[#FFFFFF] rounded-full border border-[#1F2937]"></div>
       <div className="absolute -translate-x-1/2" style={{ left: '12px', top: '14px', bottom: 0, borderLeft: '1px solid #1F2937' }}></div>
@@ -44,16 +51,20 @@ const TimelineItem = ({ title, organization, period, description }: TimelineItem
           </p>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const JourneySection = () => {
   return (
-    <section
+    <motion.section
       id="journey"
       className="flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16"
       style={{ marginBottom: "220px" }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
     >
       <div className="max-w-6xl mx-auto text-center">
         <div className="space-y-12">
@@ -146,7 +157,7 @@ const JourneySection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
