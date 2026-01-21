@@ -7,11 +7,17 @@ import nodejsIcon from "@/assets/icons/nodejs.svg";
 import gitIcon from "@/assets/icons/git.svg";
 import azureIcon from "@/assets/icons/azure.svg";
 import downloadIcon from "@/assets/icons/download.svg";
+import resumePdf from "@/assets/resume/Pedro_Cantanhêde_Frontend_Developer_Resume.pdf";
 import { motion } from "framer-motion";
 
 const AboutSection = () => {
   const downloadResume = () => {
-    console.log("Downloading resume...");
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "Pedro_Cantanhêde_Frontend_Developer_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
