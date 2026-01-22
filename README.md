@@ -5,7 +5,7 @@
 <div align="center">
     <h3> 🟡 Modern and responsive personal portfolio developed with React and TypeScript. 🟡 </h3>
     <a href="https://www.pedro-cantanhede.dev/" target="_blank">
-      <img src="https://img.shields.io/static/v1?label=Portfolio&message=Pedro Cantanhêde&color=ffa800&style=for-the-badge" target="_blank" alt="Portfolio">
+      <img src="https://img.shields.io/static/v1?label=Portfolio&message=Pedro Cantanhede&color=ffa800&style=for-the-badge" target="_blank" alt="Rocketseat">
     </a>
     <a href="https://github.com/PedroCantanhede" target="_blank">
       <img src="https://img.shields.io/static/v1?label=Author&message=PedroCantanhede&color=000000&style=for-the-badge" target="_blank" alt="Pedro Cantanhêde">
