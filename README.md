@@ -128,7 +128,7 @@ For questions or suggestions, contact me through the portfolio form or social ne
 
 You can view the project layout via [this link](https://www.figma.com/design/ytQWFiSdYzwIV0jf6yy1TM/Portfolio-Developer---Pedro-Cantanhede?node-id=0-1&p=f&t=eqUxtZLXV3bck3UM-0). You need a Figma account to access it.
 
-**Design inspiration:**  
+- Design inspiration: -
 This portfolio was inspired by a community design created by [Rodgers M. Kolwe](https://www.figma.com/@rodgersmkolwe).  
 The original layout served as a visual reference and inspiration, adapted and reinterpreted to fit my personal style, goals, and development context.
 ---
