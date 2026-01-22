@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-    <h3> 🟡 My portfolio - Frontend Developer 🟡 </h3>
+    <h3> 🟨 My portfolio - Frontend Developer 🟨 </h3>
     <a href="https://www.pedro-cantanhede.dev/" target="_blank">
       <img src="https://img.shields.io/static/v1?label=Portfolio&message=PedroCantanhede&color=ffa800&style=for-the-badge" target="_blank" alt="Rocketseat">
     </a>
