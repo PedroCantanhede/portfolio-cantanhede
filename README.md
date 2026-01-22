@@ -1,144 +1,148 @@
-# Portfolio Pessoal
+<h1 align="center">
 
-Um portfólio moderno e responsivo construído com React, Vite, TypeScript, Tailwind CSS e shadcn/ui.
+    <img alt="Portfolio Pedro Cantanhêde" title="Portfolio Pedro Cantanhêde" src="github/logo-pedro-cantanhede.svg" width="300px" />
 
-## 🚀 Tecnologias Utilizadas
+</h1>
 
-- **React 18** - Biblioteca para interfaces de usuário
-- **Vite** - Build tool e dev server
-- **TypeScript** - Tipagem estática
-- **Tailwind CSS** - Framework CSS utilitário
-- **shadcn/ui** - Componentes UI modernos
-- **Lucide React** - Ícones SVG
-- **Radix UI** - Componentes primitivos acessíveis
+<div align="center">
 
-## 📁 Estrutura do Projeto
+    <h3> 🟡 Modern and responsive personal portfolio developed with React and TypeScript. 🟡 </h3>
 
-```
-src/
-├── components/          # Componentes reutilizáveis
-│   ├── ui/             # Componentes UI base (shadcn/ui)
-│   ├── Navigation.tsx  # Navegação principal
-│   └── Footer.tsx      # Rodapé
-├── sections/           # Seções da página
-│   ├── HeroSection.tsx
-│   ├── AboutSection.tsx
-│   ├── JourneySection.tsx
-│   ├── TestimonialsSection.tsx
-│   ├── ProjectsSection.tsx
-│   └── ContactSection.tsx
-├── lib/               # Utilitários
-│   └── utils.ts       # Funções auxiliares
-├── types/             # Definições TypeScript
-│   └── index.ts
-└── App.tsx            # Componente principal
-```
+    <a href="https://www.pedro-cantanhede.dev/" target="_blank">
 
-## 🎨 Seções do Portfólio
+      <img src="https://img.shields.io/static/v1?label=Portfolio&message=Pedro Cantanhêde&color=ffa800&style=for-the-badge" target="_blank" alt="Portfolio">
 
-1. **Home (Hero)** - Apresentação principal com nome, descrição e links sociais
-2. **About** - Informações pessoais, habilidades e estatísticas
-3. **Journey** - Experiência profissional e educação
-4. **Testimonials** - Depoimentos de clientes e colegas
-5. **Projects** - Projetos desenvolvidos com tecnologias utilizadas
-6. **Contact** - Formulário de contato e informações de contato
-7. **Footer** - Links rápidos e redes sociais
+    </a>
 
-## 🛠️ Instalação e Execução
+    <a href="https://github.com/PedroCantanhede" target="_blank">
 
-### Pré-requisitos
-- Node.js (versão 16 ou superior)
-- npm ou yarn
+      <img src="https://img.shields.io/static/v1?label=Author&message=PedroCantanhede&color=000000&style=for-the-badge" target="_blank" alt="Pedro Cantanhêde">
 
-### Passos para instalação
+    </a>
 
-1. Clone o repositório:
+    <img src="https://img.shields.io/github/repo-size/PedroCantanhede/portfolio-cantanhede?color=ffa800&style=for-the-badge" alt="Repository"> 
+
+    <img src="https://img.shields.io/github/license/PedroCantanhede/portfolio-cantanhede?color=000000&style=for-the-badge" alt="License">
+
+    <img src="https://img.shields.io/github/languages/count/PedroCantanhede/portfolio-cantanhede?color=ffa800&style=for-the-badge" alt="Languages">
+
+</div>
+
+# Personal Portfolio
+
+This is my modern and responsive portfolio built to showcase my work as a Front-End Developer. Here I present my skills, projects, professional experience, and contact information.
+
+<p align="center">
+
+  <img alt="Portfolio Pedro Cantanhêde" src="./github/banner.png" width="100%">
+
+</p>
+
+# 🔨 Tecnologias
+
+💻 React 18
+
+💻 TypeScript
+
+💻 Vite
+
+💻 Tailwind CSS
+
+💻 shadcn/ui
+
+💻 Framer Motion
+
+💻 Radix UI
+
+💻 Lucide React
+
+## :camera: Preview:
+
+### Desktop Application
+
+![GIF](github/portfolio.gif)
+
+### Mobile Application
+
+![GIF](github/portfolio-mobile.gif)
+
+![GIF](github/portfolio-mobile2.gif)
+
+## :rocket: Installation
+
 ```bash
-git clone <url-do-repositorio>
-cd portfolio
+
+# Clone the repository
+
+$ git clone https://github.com/PedroCantanhede/portfolio-cantanhede.git
+
+# Enter the project folder
+
+$ cd portfolio-cantanhede
+
+# Install dependencies
+
+$ npm install
+
+# Run the application
+
+$ npm run dev
+
+# Open the project on port: 5173 - access: http://localhost:5173
+
 ```
 
-2. Instale as dependências:
-```bash
-npm install
-```
+## 🎨 Portfolio Sections
 
-3. Execute o projeto em modo de desenvolvimento:
-```bash
-npm run dev
-```
+1. **Home (Hero)** - Main presentation with name, description and social links
+2. **About** - Personal information, skills and resume download
+3. **Journey** - Professional experience and education
+4. **Testimonials** - Client and colleague testimonials
+5. **Projects** - Projects developed with technologies used
+6. **Contact** - Contact form and contact information
+7. **Footer** - Quick links and social networks
 
-4. Abra [http://localhost:5173](http://localhost:5173) no seu navegador
+## 🚀 Deploy
 
-### Scripts Disponíveis
+The project is hosted on Vercel and can be accessed at:
 
-- `npm run dev` - Executa o projeto em modo de desenvolvimento
-- `npm run build` - Gera a build de produção
-- `npm run preview` - Visualiza a build de produção localmente
-- `npm run lint` - Executa o linter
+**[www.pedro-cantanhede.dev](https://www.pedro-cantanhede.dev/)**
 
-## 🚀 Deploy no Vercel
+### Available Scripts
 
-O projeto está configurado para deploy automático no Vercel:
+- `npm run dev` - Runs the project in development mode
+- `npm run build` - Generates the production build
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Runs the linter
 
-1. Faça push do código para o GitHub
-2. Conecte o repositório ao Vercel
-3. O deploy será feito automaticamente
+## 📱 Responsiveness
 
-### Configuração Manual
+The portfolio is fully responsive and works on:
 
-Se preferir fazer o deploy manualmente:
-
-1. Execute `npm run build`
-2. Faça upload da pasta `dist` para o Vercel
-
-## 🎨 Personalização
-
-### Cores e Tema
-O projeto usa um tema escuro por padrão. Para personalizar as cores, edite as variáveis CSS em `src/index.css`.
-
-### Conteúdo
-Para personalizar o conteúdo:
-
-1. **Informações pessoais**: Edite os componentes em `src/sections/`
-2. **Projetos**: Modifique o array `projects` em `ProjectsSection.tsx`
-3. **Experiência**: Atualize o array `experiences` em `JourneySection.tsx`
-4. **Depoimentos**: Edite o array `testimonials` em `TestimonialsSection.tsx`
-
-### Imagens
-- Substitua os emojis por imagens reais nos componentes
-- Adicione suas fotos e imagens de projetos na pasta `public/`
-- Atualize as referências nos componentes
-
-## 📱 Responsividade
-
-O portfólio é totalmente responsivo e funciona em:
 - Desktop (1200px+)
 - Tablet (768px - 1199px)
-- Mobile (até 767px)
+- Mobile (up to 767px)
 
-## 🔧 Configurações Adicionais
+## 📄 License
 
-### Alias de Importação
-O projeto usa o alias `@` para importações relativas ao diretório `src/`.
+This project is under the MIT license. See the LICENSE file for more details.
 
-### TypeScript
-Configuração completa do TypeScript com tipagem estrita e path mapping.
+## 🤝 Contributing
 
-### Tailwind CSS
-Configuração customizada com variáveis CSS para tema escuro e componentes shadcn/ui.
+Contributions are welcome! Feel free to:
 
-## 📄 Licença
+- Report bugs
+- Suggest improvements
+- Submit pull requests
 
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+## 📞 Contact
 
-## 🤝 Contribuição
+For questions or suggestions, contact me through the portfolio form or social networks.
 
-Contribuições são bem-vindas! Sinta-se à vontade para:
-- Reportar bugs
-- Sugerir melhorias
-- Enviar pull requests
+---
 
-## 📞 Contato
+<div align="center">
 
-Para dúvidas ou sugestões, entre em contato através do formulário no portfólio ou pelas redes sociais.
+  <p>Developed with ❤️ by <a href="https://github.com/PedroCantanhede" target="_blank">Pedro Cantanhêde</a></p>
+
+</div>
