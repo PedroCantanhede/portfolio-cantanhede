@@ -1,31 +1,18 @@
 <h1 align="center">
-
     <img alt="Portfolio Pedro Cantanhêde" title="Portfolio Pedro Cantanhêde" src="github/logo-pedro-cantanhede.svg" width="300px" />
-
 </h1>
 
 <div align="center">
-
     <h3> 🟡 Modern and responsive personal portfolio developed with React and TypeScript. 🟡 </h3>
-
     <a href="https://www.pedro-cantanhede.dev/" target="_blank">
-
       <img src="https://img.shields.io/static/v1?label=Portfolio&message=Pedro Cantanhêde&color=ffa800&style=for-the-badge" target="_blank" alt="Portfolio">
-
     </a>
-
     <a href="https://github.com/PedroCantanhede" target="_blank">
-
       <img src="https://img.shields.io/static/v1?label=Author&message=PedroCantanhede&color=000000&style=for-the-badge" target="_blank" alt="Pedro Cantanhêde">
-
     </a>
-
     <img src="https://img.shields.io/github/repo-size/PedroCantanhede/portfolio-cantanhede?color=ffa800&style=for-the-badge" alt="Repository"> 
-
     <img src="https://img.shields.io/github/license/PedroCantanhede/portfolio-cantanhede?color=000000&style=for-the-badge" alt="License">
-
     <img src="https://img.shields.io/github/languages/count/PedroCantanhede/portfolio-cantanhede?color=ffa800&style=for-the-badge" alt="Languages">
-
 </div>
 
 # Personal Portfolio
@@ -33,9 +20,7 @@
 This is my modern and responsive portfolio built to showcase my work as a Front-End Developer. Here I present my skills, projects, professional experience, and contact information.
 
 <p align="center">
-
   <img alt="Portfolio Pedro Cantanhêde" src="./github/banner.png" width="100%">
-
 </p>
 
 # 🔨 Tecnologias
@@ -142,7 +127,5 @@ For questions or suggestions, contact me through the portfolio form or social ne
 ---
 
 <div align="center">
-
   <p>Developed with ❤️ by <a href="https://github.com/PedroCantanhede" target="_blank">Pedro Cantanhêde</a></p>
-
 </div>
