@@ -628,6 +628,55 @@ button.text-white {
   color: white !important;
 }
 
+/* Force black text for contact button - iOS fix */
+button[data-variant="contact"],
+button[data-variant="contact"] *,
+button[class*="contact"]:not([class*="projects"]),
+button[class*="contact"]:not([class*="projects"]) *,
+button.variant-contact {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* Specific fix for contact button variant and all children */
+button[class*="contact"]:not([class*="projects"]),
+button[class*="contact"]:not([class*="projects"]) *,
+.contact-button,
+.contact-button * {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+/* iOS Safari specific fix for contact buttons */
+@supports (-webkit-touch-callout: none) {
+  button[data-variant="contact"],
+  button[data-variant="contact"] *,
+  button[class*="contact"]:not([class*="projects"]),
+  button[class*="contact"]:not([class*="projects"]) *,
+  .contact-button,
+  .contact-button *,
+  .overlay-contact-button,
+  .overlay-contact-button * {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+}
+
+/* Mobile specific fix for contact buttons */
+@media (max-width: 1025px) {
+  button[data-variant="contact"],
+  button[data-variant="contact"] *,
+  button[class*="contact"]:not([class*="projects"]),
+  button[class*="contact"]:not([class*="projects"]) *,
+  .contact-button,
+  .contact-button *,
+  .overlay-contact-button,
+  .overlay-contact-button * {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+  }
+}
+
 /* Hero Section background */
 .hero-section {
   background-image: url('/src/assets/background-desktop.svg');
