@@ -289,7 +289,8 @@ body {
   
   .mobile-menu-items-container {
     gap: 25px !important;
-    padding-bottom: 200px !important;
+    padding-bottom: 100px !important;
+    padding-top: 50px !important;
   }
   
   .mobile-menu-social-icons {
